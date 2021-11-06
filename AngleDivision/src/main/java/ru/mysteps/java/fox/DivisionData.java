@@ -6,24 +6,19 @@ import java.util.List;
 public class DivisionData {
     private int divisible;
     private int divisor;
+    private int firstPart;
     private int result;
     private int surplus;
     private List<Step> steps = new ArrayList();
-    private List<Integer> spaces = new ArrayList<>();
 
-    public List<Integer> getSpaces() {
-        return spaces;
-    }
-
-    public void setSpaces(Integer space) {
-        this.spaces = spaces;
-        if(spaces.size()>0) {
-            space = (spaces.get(spaces.size() - 1)) + space;
-            spaces.add(space);
-        }else {
-            spaces.add(space);
-        }
-
+    public DivisionData(int divisible,
+                        int divisor,
+                        int result,
+                        int surplus) {
+        this.divisible = divisible;
+        this.divisor   = divisor;
+        this.result    = result;
+        this.surplus   = surplus;
     }
 
     public int getDivisible() {
@@ -42,21 +37,16 @@ public class DivisionData {
         return surplus;
     }
 
-    public DivisionData(int divisible,
-                        int divisor,
-                        int result,
-                        int surplus) {
-        this.divisible = divisible;
-        this.divisor   = divisor;
-        this.result    = result;
-        this.surplus   = surplus;
-    }
-
-    public DivisionData() {
+    public int getFirstPart() {
+        return firstPart;
     }
 
     public List<Step> getSteps() {
         return steps;
+    }
+
+    public void setFirstPart(int firstPart) {
+        this.firstPart = firstPart;
     }
 
     public void setSteps(Step step) {
